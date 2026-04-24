@@ -254,6 +254,18 @@
       justify-content: center;
       font-size: 6rem;
       background: linear-gradient(135deg, rgba(233, 69, 96, 0.1), rgba(15, 52, 96, 0.3));
+      overflow: hidden;
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .3s;
+    }
+
+    .product-card:hover .product-img img {
+      transform: scale(1.1);
     }
 
     .badge-new {
@@ -662,52 +674,251 @@
     }
 
     /* OFFER BANNER */
-    .offer-banner{background:linear-gradient(90deg,#e94560,#f5a623,#e94560);background-size:200%;animation:bannerSlide 4s linear infinite;padding:10px;text-align:center;font-size:.85rem;font-weight:600;color:#fff;position:relative;z-index:999;margin-top:0;}
-    @keyframes bannerSlide{0%{background-position:0%}100%{background-position:200%}}
-    .offer-banner span{margin:0 15px;}
+    .offer-banner {
+      background: linear-gradient(90deg, #e94560, #f5a623, #e94560);
+      background-size: 200%;
+      animation: bannerSlide 4s linear infinite;
+      padding: 10px;
+      text-align: center;
+      font-size: .85rem;
+      font-weight: 600;
+      color: #fff;
+      position: relative;
+      z-index: 999;
+      margin-top: 0;
+    }
+
+    @keyframes bannerSlide {
+      0% {
+        background-position: 0%
+      }
+
+      100% {
+        background-position: 200%
+      }
+    }
+
+    .offer-banner span {
+      margin: 0 15px;
+    }
 
     /* REVIEWS */
-    #reviews{background:var(--bg);}
-    .reviews-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;}
-    .review-card{background:var(--card);border-radius:18px;padding:25px;width:280px;border:1px solid rgba(255,255,255,0.05);text-align:left;transition:transform .3s;}
-    .review-card:hover{transform:translateY(-5px);}
-    .stars{color:#f5a623;font-size:1.1rem;margin-bottom:10px;}
-    .review-text{color:var(--sub);font-size:.88rem;line-height:1.6;margin-bottom:15px;}
-    .reviewer{display:flex;align-items:center;gap:10px;}
-    .reviewer-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#e94560,#f5a623);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;}
-    .reviewer-name{font-size:.85rem;font-weight:600;}
-    .reviewer-loc{font-size:.75rem;color:var(--sub);}
+    #reviews {
+      background: var(--bg);
+    }
+
+    .reviews-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .review-card {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 25px;
+      width: 280px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      text-align: left;
+      transition: transform .3s;
+    }
+
+    .review-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .stars {
+      color: #f5a623;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .review-text {
+      color: var(--sub);
+      font-size: .88rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .reviewer-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #e94560, #f5a623);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: .9rem;
+    }
+
+    .reviewer-name {
+      font-size: .85rem;
+      font-weight: 600;
+    }
+
+    .reviewer-loc {
+      font-size: .75rem;
+      color: var(--sub);
+    }
 
     /* SIZE SELECTOR */
-    .size-selector{display:flex;gap:8px;margin:10px 0;flex-wrap:wrap;}
-    .size-btn{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:var(--text);padding:5px 12px;border-radius:8px;cursor:pointer;font-size:.8rem;font-family:'Poppins',sans-serif;transition:all .2s;}
-    .size-btn.active,.size-btn:hover{background:var(--accent);border-color:var(--accent);color:#fff;}
+    .size-selector {
+      display: flex;
+      gap: 8px;
+      margin: 10px 0;
+      flex-wrap: wrap;
+    }
+
+    .size-btn {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--text);
+      padding: 5px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: .8rem;
+      font-family: 'Poppins', sans-serif;
+      transition: all .2s;
+    }
+
+    .size-btn.active,
+    .size-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
 
     /* COLOR PICKER */
-    .color-picker{display:flex;gap:8px;margin:10px 0;align-items:center;}
-    .color-dot{width:22px;height:22px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:all .2s;}
-    .color-dot.active,.color-dot:hover{border-color:#fff;transform:scale(1.2);}
+    .color-picker {
+      display: flex;
+      gap: 8px;
+      margin: 10px 0;
+      align-items: center;
+    }
+
+    .color-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all .2s;
+    }
+
+    .color-dot.active,
+    .color-dot:hover {
+      border-color: #fff;
+      transform: scale(1.2);
+    }
 
     /* COUPON */
-    .coupon-row{display:flex;gap:8px;margin:15px 0;}
-    .coupon-input{flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#fff;padding:10px 14px;border-radius:10px;font-family:'Poppins',sans-serif;font-size:.85rem;outline:none;transition:border .3s;}
-    .coupon-input:focus{border-color:var(--accent);}
-    .coupon-btn{background:var(--accent);color:#fff;border:none;padding:10px 16px;border-radius:10px;cursor:pointer;font-family:'Poppins',sans-serif;font-weight:600;font-size:.85rem;white-space:nowrap;}
-    .coupon-msg{font-size:.8rem;margin-top:5px;}
+    .coupon-row {
+      display: flex;
+      gap: 8px;
+      margin: 15px 0;
+    }
+
+    .coupon-input {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-size: .85rem;
+      outline: none;
+      transition: border .3s;
+    }
+
+    .coupon-input:focus {
+      border-color: var(--accent);
+    }
+
+    .coupon-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: .85rem;
+      white-space: nowrap;
+    }
+
+    .coupon-msg {
+      font-size: .8rem;
+      margin-top: 5px;
+    }
 
     /* SCROLL TO TOP */
-    .scroll-top{position:fixed;bottom:30px;right:30px;width:46px;height:46px;background:linear-gradient(135deg,#e94560,#c0392b);color:#fff;border:none;border-radius:50%;font-size:1.2rem;cursor:pointer;z-index:998;opacity:0;transform:translateY(20px);transition:all .3s;box-shadow:0 5px 20px rgba(233,69,96,0.4);}
-    .scroll-top.show{opacity:1;transform:translateY(0);}
-    .scroll-top:hover{transform:translateY(-3px) scale(1.05);}
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 46px;
+      height: 46px;
+      background: linear-gradient(135deg, #e94560, #c0392b);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 998;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all .3s;
+      box-shadow: 0 5px 20px rgba(233, 69, 96, 0.4);
+    }
+
+    .scroll-top.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scroll-top:hover {
+      transform: translateY(-3px) scale(1.05);
+    }
 
     @media(max-width:768px) {
-      nav { padding: 15px 20px; }
-      .nav-links { display: none; }
-      .section { padding: 60px 20px; }
-      .stats { gap: 30px; }
-      .contact-grid { flex-direction: column; align-items: center; }
-      .contact-form { width: 100%; }
-      .review-card { width: 100%; }
+      nav {
+        padding: 15px 20px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .section {
+        padding: 60px 20px;
+      }
+
+      .stats {
+        gap: 30px;
+      }
+
+      .contact-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-form {
+        width: 100%;
+      }
+
+      .review-card {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -771,31 +982,46 @@
 
       <div class="product-card">
         <div class="badge-new">POPULAR</div>
-        <div class="product-img">📱</div>
+        <div class="product-img">
+          <img
+            src="https://image.pollinations.ai/prompt/premium%20silicone%20mobile%20phone%20cover%20vibrant%20red%20clean%20studio%20lighting%20photography?width=400&height=400&nologo=true"
+            alt="Silicone Mobile Cover">
+        </div>
         <div class="product-info">
           <h3>Silicone Mobile Cover</h3>
           <p>Soft touch, shockproof, available in 10+ colors</p>
           <div class="color-picker">
             <span style="font-size:.75rem;color:var(--sub)">Color:</span>
-            <div class="color-dot active" style="background:#e94560" onclick="pickColor('silicone','Red',this)" title="Red"></div>
-            <div class="color-dot" style="background:#3498db" onclick="pickColor('silicone','Blue',this)" title="Blue"></div>
-            <div class="color-dot" style="background:#2ecc71" onclick="pickColor('silicone','Green',this)" title="Green"></div>
-            <div class="color-dot" style="background:#f5a623" onclick="pickColor('silicone','Orange',this)" title="Orange"></div>
-            <div class="color-dot" style="background:#9b59b6" onclick="pickColor('silicone','Purple',this)" title="Purple"></div>
+            <div class="color-dot active" style="background:#e94560" onclick="pickColor('silicone','Red',this)"
+              title="Red"></div>
+            <div class="color-dot" style="background:#3498db" onclick="pickColor('silicone','Blue',this)" title="Blue">
+            </div>
+            <div class="color-dot" style="background:#2ecc71" onclick="pickColor('silicone','Green',this)"
+              title="Green"></div>
+            <div class="color-dot" style="background:#f5a623" onclick="pickColor('silicone','Orange',this)"
+              title="Orange"></div>
+            <div class="color-dot" style="background:#9b59b6" onclick="pickColor('silicone','Purple',this)"
+              title="Purple"></div>
           </div>
           <div class="product-footer">
             <div>
               <span class="price-old">₹299</span>
               <span class="price">₹199</span>
             </div>
-            <button class="add-btn" onclick="addToCart('Silicone Cover','₹199','📱',selectedSize['silicone'],selectedColor['silicone'])">+ Add</button>
+            <button class="add-btn"
+              onclick="addToCart('Silicone Cover','₹199','📱',selectedSize['silicone'],selectedColor['silicone'])">+
+              Add</button>
           </div>
         </div>
       </div>
 
       <div class="product-card">
         <div class="badge-new">NEW</div>
-        <div class="product-img">🔮</div>
+        <div class="product-img">
+          <img
+            src="https://image.pollinations.ai/prompt/transparent%20tpu%20clear%20mobile%20phone%20cover%20case%20crystal%20clear%20studio%20lighting?width=400&height=400&nologo=true"
+            alt="TPU Clear Cover">
+        </div>
         <div class="product-info">
           <h3>TPU Clear Cover</h3>
           <p>Crystal clear, anti-yellowing, slim fit protection</p>
@@ -810,7 +1036,11 @@
       </div>
 
       <div class="product-card">
-        <div class="product-img">👕</div>
+        <div class="product-img">
+          <img
+            src="https://image.pollinations.ai/prompt/stylish%20printed%20black%20cotton%20tshirt%20apparel%20photography%20studio%20lighting?width=400&height=400&nologo=true"
+            alt="Printed T-Shirt">
+        </div>
         <div class="product-info">
           <h3>Printed T-Shirt</h3>
           <p>100% cotton, premium print, S/M/L/XL sizes</p>
@@ -826,14 +1056,19 @@
               <span class="price-old">₹699</span>
               <span class="price">₹499</span>
             </div>
-            <button class="add-btn" onclick="addToCart('Printed T-Shirt','₹499','👕',selectedSize['tshirt'])">+ Add</button>
+            <button class="add-btn" onclick="addToCart('Printed T-Shirt','₹499','👕',selectedSize['tshirt'])">+
+              Add</button>
           </div>
         </div>
       </div>
 
       <div class="product-card">
         <div class="badge-new">HOT</div>
-        <div class="product-img">🛡️</div>
+        <div class="product-img">
+          <img
+            src="https://image.pollinations.ai/prompt/heavy%20duty%20rugged%20armor%20mobile%20phone%20case%20military%20grade%20tactical?width=400&height=400&nologo=true"
+            alt="Rugged Armor Case">
+        </div>
         <div class="product-info">
           <h3>Rugged Armor Case</h3>
           <p>Heavy duty, dual layer, military grade protection</p>
@@ -922,23 +1157,51 @@
     <div class="reviews-grid">
       <div class="review-card">
         <div class="stars">★★★★★</div>
-        <p class="review-text">"Silicone cover ekdom perfect fit! Quality onek valo, daam o reasonable. Akhtar Store theke aro kinte chai!"</p>
-        <div class="reviewer"><div class="reviewer-avatar">R</div><div><div class="reviewer-name">Rahul Das</div><div class="reviewer-loc">📍 Kolkata, WB</div></div></div>
+        <p class="review-text">"Silicone cover ekdom perfect fit! Quality onek valo, daam o reasonable. Akhtar Store
+          theke aro kinte chai!"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">R</div>
+          <div>
+            <div class="reviewer-name">Rahul Das</div>
+            <div class="reviewer-loc">📍 Kolkata, WB</div>
+          </div>
+        </div>
       </div>
       <div class="review-card">
         <div class="stars">★★★★★</div>
-        <p class="review-text">"T-shirt er print onek sharp ache, cotton quality premium. 2 din e delivery peyechi. Highly recommend!"</p>
-        <div class="reviewer"><div class="reviewer-avatar">S</div><div><div class="reviewer-name">Sneha Roy</div><div class="reviewer-loc">📍 Howrah, WB</div></div></div>
+        <p class="review-text">"T-shirt er print onek sharp ache, cotton quality premium. 2 din e delivery peyechi.
+          Highly recommend!"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">S</div>
+          <div>
+            <div class="reviewer-name">Sneha Roy</div>
+            <div class="reviewer-loc">📍 Howrah, WB</div>
+          </div>
+        </div>
       </div>
       <div class="review-card">
         <div class="stars">★★★★☆</div>
-        <p class="review-text">"TPU cover clear r slim. Phone e lagale bujhaich na cover ache. WhatsApp e order kora khub shoja chilo."</p>
-        <div class="reviewer"><div class="reviewer-avatar">A</div><div><div class="reviewer-name">Arif Khan</div><div class="reviewer-loc">📍 Murshidabad, WB</div></div></div>
+        <p class="review-text">"TPU cover clear r slim. Phone e lagale bujhaich na cover ache. WhatsApp e order kora
+          khub shoja chilo."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">A</div>
+          <div>
+            <div class="reviewer-name">Arif Khan</div>
+            <div class="reviewer-loc">📍 Murshidabad, WB</div>
+          </div>
+        </div>
       </div>
       <div class="review-card">
         <div class="stars">★★★★★</div>
-        <p class="review-text">"Rugged case ta amazing! Ekbar phone porechilo kono scratch hoy ni. Packaging o onek sundor chilo."</p>
-        <div class="reviewer"><div class="reviewer-avatar">P</div><div><div class="reviewer-name">Priya Mondal</div><div class="reviewer-loc">📍 Barasat, WB</div></div></div>
+        <p class="review-text">"Rugged case ta amazing! Ekbar phone porechilo kono scratch hoy ni. Packaging o onek
+          sundor chilo."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">P</div>
+          <div>
+            <div class="reviewer-name">Priya Mondal</div>
+            <div class="reviewer-loc">📍 Barasat, WB</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1059,7 +1322,7 @@
         html += `<div class="cart-item"><div class="cart-item-icon">${item.icon}</div><div class="cart-item-info"><h4>${item.name}</h4><p>${item.price} × ${item.qty}</p></div><button class="remove-item" onclick="removeItem(${i})">🗑️</button></div>`;
       });
       const total = Math.round(sub * (1 - discount / 100));
-      waMsg += `Coupon: ${discount ? discount+'% OFF' : 'None'}\nTotal: ₹${total}`;
+      waMsg += `Coupon: ${discount ? discount + '% OFF' : 'None'}\nTotal: ₹${total}`;
       container.innerHTML = html;
       document.getElementById('cartTotalBox').style.display = 'block';
       document.getElementById('subAmt').textContent = '₹' + sub;
